@@ -1,0 +1,36 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  labels:
+    run: produce-service
+  name: produce-service
+  namespace: default
+spec:
+  replicas: 1
+  revisionHistoryLimit: 3
+  selector:
+    matchLabels:
+      run: produce-service
+  template:
+    metadata:
+      labels:
+        run: produce-service
+    spec:
+      containers:
+      - image: ${REGISTRY_URL}/${REGISTRY_NAMESPACE}/${IMAGE_NAME}:${IMAGE_TAG}
+        name: produce-service
+      terminationGracePeriodSeconds: 30
+---
+kind: Service
+apiVersion: v1
+metadata:
+  labels:
+    run: produce-service
+  name: produce-service-port
+  namespace: default
+spec:
+  selector:
+    run: produce-service
+  ports:
+    - port: 8080
+      name: http
