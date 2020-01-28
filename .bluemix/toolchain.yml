@@ -19,7 +19,7 @@ services:
     service_id: hostedgit
     parameters:
       repo_url: 'https://github.com/wkorando/cnsd-produce-service'
-      repo_name: 'produce-service-toolchain'
+      repo_name: 'cnsd-produce-service'
       type: clone
       has_issues: true
       enable_traceability: false
