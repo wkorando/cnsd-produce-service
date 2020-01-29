@@ -9,7 +9,7 @@ template:
     - build
 
 toolchain:
-  name: produce-service-toolchain
+  name: cnsd-produce-service
   template:
     getting_started:
       $ref: "#/messages/template.gettingStarted"
