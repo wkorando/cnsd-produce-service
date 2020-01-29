@@ -9,7 +9,7 @@ template:
     - build
 
 toolchain:
-  name: cnsd-produce-service
+  name: produce-service-toolchain
   template:
     getting_started:
       $ref: "#/messages/template.gettingStarted"
@@ -19,9 +19,9 @@ services:
     service_id: hostedgit
     parameters:
       repo_url: 'https://github.com/wkorando/cnsd-produce-service'
-      repo_name: 'cnsd-produce-service'
+      repo_name: 'produce-service'
       type: clone
-      has_issues: true
+      has_issues: false
       enable_traceability: false
 
   # Pipelines

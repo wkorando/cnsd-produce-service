@@ -1,5 +1,5 @@
-FROM adoptopenjdk/openjdk8-openj9:latest
+FROM adoptopenjdk/openjdk8-openj9:alpine-slim
 
-COPY produce-service-0.0.1-SNAPSHOT.jar /
+COPY target/produce-service.jar /
 
-ENTRYPOINT ["java", "-jar", "produce-service-0.0.1-SNAPSHOT.jar" ]
+ENTRYPOINT ["java", "-jar", "produce-service.jar" ]
