@@ -54,11 +54,19 @@
 			<artifactId>spring-restdocs-mockmvc</artifactId>
 			<scope>test</scope>
 		</dependency>
-		    <dependency>
-      <groupId>com.google.code.gson</groupId>
-      <artifactId>gson</artifactId>
-      <version>2.8.2</version>
-    </dependency>
+		<dependency>
+			<groupId>com.google.code.gson</groupId>
+			<artifactId>gson</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-sleuth</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-actuator</artifactId>
+		</dependency>
+
 	</dependencies>
 
 	<dependencyManagement>
@@ -73,7 +81,7 @@
 		</dependencies>
 	</dependencyManagement>
 	<build>
-	        <finalName>produce-service</finalName>
+		<finalName>produce-service</finalName>
 		<plugins>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
@@ -93,6 +101,14 @@
 						<version>${project.version}</version>
 					</contractDependency>
 					<contractsMode>LOCAL</contractsMode>
+				</configuration>
+			</plugin>
+			<plugin>
+				<artifactId>maven-surefire-plugin</artifactId>
+				<configuration>
+					<argLine>
+						-Dspring.profiles.active=test
+					</argLine>
 				</configuration>
 			</plugin>
 			<plugin>
