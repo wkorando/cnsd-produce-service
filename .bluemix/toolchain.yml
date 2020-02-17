@@ -26,13 +26,13 @@ services:
   artifact_repo:
     service_id: artifactory
 	parameters:
-      name: `workshop_artifactory`
-      dashboard_url: `url_to_your_artifactory_instance`
+      name: 'workshop_artifactory'
+      dashboard_url: 'url_to_your_artifactory_instance'
       type: maven
-      user_id: `admin`
-      token: `changeit`
-      release_url: `url_to_your_artifactory_instance/libs_release`
-      snapshot_url: `url_to_your_artifactory_instance/libs_snapshot`
+      user_id: 'admin'
+      token: 'changeit'
+      release_url: 'url_to_your_artifactory_instance/libs_release'
+      snapshot_url: 'url_to_your_artifactory_instance/libs_snapshot'
   # Pipelines
   build:
     service_id: pipeline
