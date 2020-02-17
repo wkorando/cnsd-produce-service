@@ -25,6 +25,7 @@ services:
       enable_traceability: false
   artifact_repo:
     service_id: artifactory
+	parameters:
       name: `workshop_artifactory`
       dashboard_url: `url_to_your_artifactory_instance`
       type: maven
