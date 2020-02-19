@@ -21,7 +21,7 @@ public class ProduceController {
 	private RestTemplate restTemplate;
 	private static final Logger LOGGER = LoggerFactory.getLogger(ProduceController.class);
 
-	public ProduceController(ProduceRepo repo, ProduceService service, RestTemplate restTemplate) {
+	public ProduceController(ProduceRepo repo, ProduceService service) {
 		super();
 		this.repo = repo;
 		this.service = service;
