@@ -23,16 +23,6 @@ services:
       type: clone
       has_issues: false
       enable_traceability: false
-  artifact_repo:
-    service_id: artifactory
-    parameters:
-      name: 'workshop_artifactory'
-      dashboard_url: 'url_to_your_artifactory_instance/artifactory'
-      type: maven
-      user_id: 'admin'
-      token: 'changeit'
-      release_url: 'url_to_your_artifactory_instance/artifactory/libs_release'
-      snapshot_url: 'url_to_your_artifactory_instance/artifactory/libs_snapshot'
   # Pipelines
   build:
     service_id: pipeline
