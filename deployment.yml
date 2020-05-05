@@ -35,7 +35,13 @@ spec:
           preStop:
             exec:
               command: ["/bin/bash", "-c", "sleep 5"]
-#        args: ["--spring.profiles.active=db2"]
+#        args: ["--spring.profiles.active=db2,--spring.application.json=$(BINDING)"]
+#        env:
+#        - name: BINDING
+#          valueFrom:
+#            secretKeyRef:
+#              name: binding-living-on-the-cloud-db
+#              key: binding
 ---
 kind: Service
 apiVersion: v1
